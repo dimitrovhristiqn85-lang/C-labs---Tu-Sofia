@@ -1,24 +1,43 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-int main()
-{
+int main() {
     int a;
-    float b;
-    char f=0;
-    printf("Enter a symbol");
-    scanf("%c", &f);
-    printf("enter a number");
+    int b;
+    int mul,dev,sub,add;
+    printf("Vuvedei purvo chislo:\n");
     scanf("%d", &a);
-    printf("Enter a float number");
-    scanf("%f", &b);
-    printf("That's the way of order:\n");
-    printf("a=%5d\n",a);
-    printf("b=%.2f\n",b);
-    printf("f=%5c\n", f);
-    printf("The size of things:\n");
-    printf("Size of int: %zu bitys\n", sizeof(a));
-    printf("Size of float: %zu bitys\n", sizeof(b));
-    printf("Size of char: %zu bytes\n", sizeof(f));
+    printf("Vuvedi vtoro chislo:\n");
+    scanf("%d", &b);
+    add=a+b;
+    sub=a-b;
+    mul=a*b;
+    dev=a/b;
+    printf("Add: %d\n", add);
+    printf("Sub: %d\n", sub);
+    printf("Mul:%d\n",mul);
+    printf("Dev:%d\n",dev);
     return 0;
 
+    int c;
+    int d;
+    float c1,d1;
+    printf("Vuvedet cqla stoinost za c:\n");
+    scanf("%d", &c);
+    printf("Vuvedete cqla stoinost za d:\n");
+    scanf("%d", &d);
+
+    printf("Vuvedete relna stoinost za c1:\n");
+    scanf("%f", &c1);
+    printf("Vuvedete realna stoinost za d1:\n");
+    scanf("%f", &d1);
+
+    printf("c=%d i d=%d", c,d);
+    printf("c1=%f i d1=%f", c1,d1);
+    printf("c/d=%d/%d",c,d,c/d);
+    printf("%d/%d=%f\n",c,d,(float)c/d);
+    printf("%f / %d = %f\n",c1,d,c1/d);
+    printf("%d / %f = %f\n",a,d1,a/d);
+    printf("%f / %f = %f\n",c1,d1,c1/d);
+ 
 }
+

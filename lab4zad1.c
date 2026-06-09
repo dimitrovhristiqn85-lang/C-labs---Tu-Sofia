@@ -1,22 +1,49 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-int main() {
-    int input,sum;
-    sum=0;
-    printf("Enter a value:\n");
-    scanf("%d", &input);
-    while(1) {                                                     //Tova e kato true
-        if(input==-999) {
-            break;
+#define MAX 20
 
-        } else {
-        sum+=input;
-        printf("Enter a value:\n");
-        scanf("%d", &input);
-         printf("The sum is: %d\n", sum);                              //tova se pravi kato trqbva da izkarame stoinist %d
-        }
-       
+void sort(int a[MAX]);
+
+int main() {
+    int array1[MAX];
+    int num;
+
+    printf("Vuvedete broi elementi (do %d): ", MAX);
+    scanf("%d", &num);
+
+    if (num < 0 && num > MAX) {
+        printf("Intervala ne e v neobhodimiq obhvat\n");
+        return 1;
     }
-           
+
+    for(int i = 0; i < num; i++) {
+        printf("Vuvedete chislo %d: ", i + 1);
+        scanf("%d", &array1[i]);
+    }
+
+    for(int i = num; i < MAX; i++) {
+        array1[i] = 999999; 
+    }
+
+    sort(array1);
+
+    for(int i = 0; i < num; i++) {
+        printf("%d ", array1[i]);
+    }
     return 0;
+}
+
+void sort(int a[MAX]) {
+    int min, pom;
+    for(int i = 0; i < MAX - 1; i++) {
+        min = i;
+        for(int j = i + 1; j < MAX; j++) {
+            if(a[min] > a[j]) {
+                min = j;
+            }
+        }
+        pom = a[i];
+        a[i] = a[min];
+        a[min] = pom;
+    }
 }
